@@ -1,4 +1,5 @@
-enable wheel group in sudo file
-modify user creation with ssh key to have sudoers in wheel
-disable password logins in ssh
-
+X enable wheel group in sudo file
+X disable password logins in ssh
+X user with ssh key
+X user with dotfiles
+add user to wheel when sysadmin
