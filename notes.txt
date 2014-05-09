@@ -1,0 +1,4 @@
+enable wheel group in sudo file
+modify user creation with ssh key to have sudoers in wheel
+disable password logins in ssh
+
