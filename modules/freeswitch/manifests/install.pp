@@ -1,6 +1,6 @@
 class freeswitch::install {
-	#need debian prereq packages
 
+	#need debian prereq packages as default
 	$required_packages = $osfamily ? {
         	RedHat  => ["autoconf","automake","gcc-c++","git-core","libjpeg-devel","libtool","make","ncurses-devel","pkgconfig","unixODBC-devel","openssl-devel","libogg-devel","libvorbis-devel","libcurl-devel","libtiff-devel","python-devel","expat-devel","zlib","zlib-devel","bzip2","which","pcre","pcre-devel","speex-devel","sqlite-devel"],
         	default => ['just','a','bunch','of','nonsense'],
@@ -44,13 +44,11 @@ class freeswitch::install {
 	}
 
 	service { 'freeswitch':
+		hasstatus => true,
 		require => File['/etc/init.d/freeswitch'],
 		enable => true,
 		ensure => running,
 	}
-	#make system service
-
-	#start service
 
 }
 
