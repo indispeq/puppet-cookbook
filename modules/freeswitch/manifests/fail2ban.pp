@@ -1,4 +1,4 @@
-class freeswitch-fail2ban::install {
+class freeswitch::fail2ban {
 
 	#do this if centos
 
