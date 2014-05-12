@@ -1,0 +1,39 @@
+<include>
+	<gateway name="vitelity-outbound">
+		<!--/// account username *required* ///-->
+		<param name="username" value="username"/>
+ 		<!--/// auth realm: *optional* same as gateway name, if blank ///-->
+	 	<param name="realm" value="vitel-outbound"/>
+		<!--/// account password *required* ///-->
+		<param name="password" value="password"/>
+		<!--/// extension for inbound calls: *optional* same as username, if blank ///-->
+		<param name="extension" value="default"/>
+		<!--/// proxy host: *optional* same as realm, if blank ///-->
+		<param name="proxy" value="outbound1.vitelity.net"/>
+		<!--/// expire in seconds: *optional* 3600, if blank ///-->
+		<param name="expire-seconds" value="600"/>
+		<!--/// register: *optional* true, if blank ///-->
+		<param name="register" value="false" />
+	</gateway>
+</include>
+
+
+<include>
+	<gateway name="vitelity-inbound">
+		<!--/// account username *required* ///-->
+		<param name="username" value="your-username"/>
+		<!--/// auth realm: *optional* same as gateway name, if blank ///-->
+		<param name="realm" value="vitel-inbound"/>
+		<!--/// account password *required* (do not include allow=all) ///-->
+		<param name="password" value="your-password"/>
+		<!--/// extension for inbound calls: *optional* same as username, if blank ///-->
+		<param name="extension" value="default"/>
+		<!--/// proxy host: *optional* same as realm, if blank ///-->
+		<param name="proxy" value="inbound18.vitelity.net"/>
+		<!--/// expire in seconds: *optional* 3600, if blank ///-->
+		<param name="expire-seconds" value="600"/>
+		<param name="context" value="inbound"/>
+		<!--/// register: *optional* true, if blank ///-->
+		<param name="register" value="true" />
+	</gateway>
+</include>

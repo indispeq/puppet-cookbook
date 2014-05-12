@@ -1,4 +1,4 @@
-class indispeq {
+class indispeq::security {
 	tag('provisioning')
 
 	# Allow users belonging wheel group to use sudo

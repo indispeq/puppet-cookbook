@@ -4,5 +4,5 @@ node 'centos1.indispeq.com' {
 	include user::sysadmins
 	include freeswitch::install
 	include epel
-	include freeswitch::fail2ban
+	include fail2ban::install
 }
