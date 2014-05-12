@@ -50,5 +50,16 @@ class freeswitch::install {
 		ensure => running,
 	}
 
+	#A change by Red Hat in RHEL 6 and later releases was to compile the
+	#kernel to run tickless by default. As previously brought up on the mailing
+	#lists, it is recommended that the kernel's tickless feature should be disabled
+	#for optimum performance when running FreeSwitch under the newer operating
+	#system's kernel. You can disable the tickless feature by appending nohz=off
+	#to your boot options under GRUB. The GRUB start up configuration file is
+	#located under /boot/grub or as /etc/grub.conf. Add it to the line beginning
+	#with "kernel". This is also applicable to Fedora releases 8 and later.
+
+	#If seeing performance issues, will need to append this
+
 }
 
