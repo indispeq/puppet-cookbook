@@ -50,14 +50,12 @@ class freeswitch::install {
 		ensure => running,
 	}
 
-#	exec { 'open firewall ports':
-#		require => Service['freeswitch'],
-#		use a function or definition from firewall.pp, get 5060,5080,
-#		and any others.
-#		get implicit deny rule on input chain with iptables -nL --line-numbers
-#		iptables -I INPUT $line -p tcp --dport 5060 -j ACCEPT
-#		iptables -I INPUT $line -p tcp --dport 5060 -j ACCEPT
-#	}
+	#open up ports, this may need to be dynamically selected later based on modules installed, all in due time...
+	freeswitch::firewallinput { 'sip':
+		porttype => 'tcp',
+		portnumber => '5060',
+		action => 'ACCEPT'
+	}
 
 	file { '/usr/local/bin/fs_cli':
 		require => File['/usr/local/freeswitch'],

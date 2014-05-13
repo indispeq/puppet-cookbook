@@ -1,4 +1,5 @@
 class fail2ban::install {
+	#keeps adding rules, check if it's reinstalling or something
 
 	#do this if centos
 
