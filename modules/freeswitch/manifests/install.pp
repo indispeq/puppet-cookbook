@@ -50,6 +50,21 @@ class freeswitch::install {
 		ensure => running,
 	}
 
+#	exec { 'open firewall ports':
+#		require => Service['freeswitch'],
+#		use a function or definition from firewall.pp, get 5060,5080,
+#		and any others.
+#		get implicit deny rule on input chain with iptables -nL --line-numbers
+#		iptables -I INPUT $line -p tcp --dport 5060 -j ACCEPT
+#		iptables -I INPUT $line -p tcp --dport 5060 -j ACCEPT
+#	}
+
+	file { '/usr/local/bin/fs_cli':
+		require => File['/usr/local/freeswitch'],
+		target => '/usr/local/freeswitch/bin/fs_cli',
+		ensure => link,
+	}
+
 	#A change by Red Hat in RHEL 6 and later releases was to compile the
 	#kernel to run tickless by default. As previously brought up on the mailing
 	#lists, it is recommended that the kernel's tickless feature should be disabled
