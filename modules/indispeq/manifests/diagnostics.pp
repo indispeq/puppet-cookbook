@@ -4,6 +4,8 @@ class indispeq::diagnostics {
 		ensure => installed,
 	}
 
+	#revisit this, am getting a Notice:
+	#/Stage[main]/Indispeq::Diagnostics/Service[sysstat]/ensure: ensure changed 'stopped' to 'running', like it's not chkconfig-d
 	service { 'sysstat':
 		require => Package['sysstat'],
 		enable => true,

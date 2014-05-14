@@ -51,9 +51,26 @@ class freeswitch::install {
 	}
 
 	#open up ports, this may need to be dynamically selected later based on modules installed, all in due time...
-	freeswitch::firewallinput { 'sip':
+	freeswitch::firewallinput { 'sip_tcp':
 		porttype => 'tcp',
 		portnumber => '5060',
+		action => 'ACCEPT'
+	}
+
+	freeswitch::firewallinput { 'onscreen_tcp':
+		porttype => 'tcp',
+		portnumber => '5080',
+		action => 'ACCEPT'
+	}
+	freeswitch::firewallinput { 'sip_udp':
+		porttype => 'udp',
+		portnumber => '5060',
+		action => 'ACCEPT'
+	}
+
+	freeswitch::firewallinput { 'onscreen_udp':
+		porttype => 'udp',
+		portnumber => '5080',
 		action => 'ACCEPT'
 	}
 
