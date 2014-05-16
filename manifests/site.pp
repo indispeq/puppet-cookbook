@@ -1,4 +1,4 @@
-node 'centos1.indispeq.com' { 
+node 'centos1.indispeq.com', 'fs1.indispeq.local' { 
 	include indispeq::diagnostics
 	include indispeq::security
 	include user::virtual
