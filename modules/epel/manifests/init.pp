@@ -6,8 +6,8 @@ class epel {
 
 	package { 'epel-release':
 		ensure => installed,
-		source => 'http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm',
 		name => 'epel-release',
+		source => 'http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm',
 		provider => rpm,
 	}
 }
